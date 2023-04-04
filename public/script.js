@@ -7,7 +7,7 @@ var peer = new Peer(undefined, {
 });
 
 const user = prompt("Enter your name");
-const myVideo = document.createElement("Video");
+const myVideo = document.createElement("video");
 myVideo.muted = true;
 let myStream;
 navigator.mediaDevices.getUserMedia({audio:true, video:true}).then(stream =>{
@@ -16,10 +16,10 @@ navigator.mediaDevices.getUserMedia({audio:true, video:true}).then(stream =>{
 })
 
 function addVideoStream(video,stream){
-    Video.srcObject = stream;
-    Video.addEventListener("loadedmetadata", ()=>{
-        Video.play()
-        $("#Video_Grid").append(Video)
+    video.srcObject = stream;
+    video.addEventListener("loadedmetadata", ()=>{
+        video.play()
+        $("#Video_Grid").append(video)
     })
 }
 
