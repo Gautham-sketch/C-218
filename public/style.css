@@ -109,7 +109,7 @@
   background-color : var(--main-dark)
 }
 
-Video {
+video {
   height : 300px;
   border-radius : 1rem;
   margin : 0.5rem;
