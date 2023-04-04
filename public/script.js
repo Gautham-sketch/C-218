@@ -7,6 +7,21 @@ var peer = new Peer(undefined, {
 });
 
 const user = prompt("Enter your name");
+const myVideo = document.createElement("Video");
+myVideo.muted = true;
+let myStream;
+navigator.mediaDevices.getUserMedia({audio:true, video:true}).then(stream =>{
+    mystream = stream;
+    addVideoStream(myVideo, stream)
+})
+
+function addVideoStream(video,stream){
+    Video.srcObject = stream;
+    Video.addEventListener("loadedmetadata", ()=>{
+        video.play()
+        $("#Video_Grid").append(Video)
+    })
+}
 
 $(function () {
     $("#show_chat").click(function () {
